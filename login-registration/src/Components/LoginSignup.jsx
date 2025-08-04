@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import '../index.css';
 import user_icon from '../assets/person.png';
 import email_icon from '../assets/email.png';
@@ -18,10 +18,11 @@ const LoginSignup = () => {
                 <div className="w-16 h-1 bg-[#3c009d] rounded-lg"></div>
             </div>
             <div className="mt-14 flex flex-col gap-6">
-                <div className="flex items-center m-auto w-[480px] h-20 bg-[#eaeaea] rounded-md">
+                {action=='Login'?<div></div>:(<div className="flex items-center m-auto w-[480px] h-20 bg-[#eaeaea] rounded-md">
                     <img src={user_icon} alt="" className='my-0 mx-7'/>
                     <input type="text" placeholder='Name' className='h-12 w-[400px] bg-transparent border-none outline-none color-[#797979] text-xl'/>
-                </div>
+                </div>)}
+                
                 <div className="flex items-center m-auto w-[480px] h-20 bg-[#eaeaea] rounded-md">
                     <img src={email_icon} alt="" className='my-0 mx-7'/>
                     <input type="email" placeholder='Email' className='h-12 w-[400px] bg-transparent border-none outline-none color-[#797979] text-xl'/>
@@ -31,10 +32,11 @@ const LoginSignup = () => {
                     <input type="password" placeholder='Password' className='h-12 w-[400px] bg-transparent border-none outline-none color-[#797979] text-xl'/>
                 </div>
             </div>
-            <div className="pl-62 mt-27 color-[#797979] text-xl">Lost Password? <span className='color-[#3c009d] cursor-pointer'>Click Here</span></div>
-            <div className="flex gap-7 my-14 mx-auto">
-                <div className="flex justify-center items-center w-[220px] h-[59px] color-white bg-[#4c00b4] rounded-[50px] text-lg font-bold cursor-pointer">Sign Up</div>
-                <div className="flex justify-center items-center w-[220px] h-[59px] color-white bg-[#4c00b4] rounded-[50px] text-lg font-bold cursor-pointer">Login</div>
+            {action == 'Sign Up'?<div></div>:(<div className="mt-27 text-[#797979] text-xl">Lost Password? <span className='text-[#3c009d] cursor-pointer'>Click Here</span></div>)}
+            
+            <div className="flex gap-7 my-12 mx-auto">
+                <div className={`flex justify-center items-center w-[220px] h-[59px] color-white rounded-[50px] text-lg font-bold cursor-pointer ${action == 'Login'?'text-[#676767] bg-[#eaeaea]':'bg-[#3c009d] text-white'}`} onClick={()=>setAction('Sign Up')}>Sign Up</div>
+                <div className={`flex justify-center items-center w-[220px] h-[59px] color-white rounded-[50px] text-lg font-bold cursor-pointer ${action == 'Sign Up'?'text-[#676767] bg-[#eaeaea]':'bg-[#3c009d] text-white'}`} onClick={()=>setAction('Login')}>Login</div>
             </div>
         </div>
     </div>
@@ -42,4 +44,4 @@ const LoginSignup = () => {
   )
 }
 
-export default LoginSignup
+export default memo(LoginSignup);
