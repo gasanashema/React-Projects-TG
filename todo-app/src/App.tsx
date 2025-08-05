@@ -1,7 +1,8 @@
+import TodoList from "./components/TodoList"
 function App() {
   return (
     <>
-      <h1 className="bg-yellow-400">hello world</h1>
+      <TodoList />
     </>
   )
 }
