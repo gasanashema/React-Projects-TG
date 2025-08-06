@@ -13,7 +13,7 @@ function TodoList() {
   function addTask(event) {
   event.preventDefault();
     if(newTask.length==0){
-       alert('A task can not be empty');
+     return  alert('A task can not be empty');
     }
      setTask([...tasks,newTask]);
      setNewTask('');
