@@ -1,10 +1,19 @@
+import Header from "./components/Header"
 function App() {
   return (
     <>
-      <h1 className="bg-yellow-400">hello world</h1>
+      <div class="bg-black text-white">
+        <div class="w-full px-10 py-8">
+          <div class="p-5">
+            <Header />
+
+
+
+          </div>
+        </div>
+      </div>
     </>
   )
 }
 
 export default App
-        
