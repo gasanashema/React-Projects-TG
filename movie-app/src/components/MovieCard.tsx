@@ -1,4 +1,4 @@
-function MovieCard(props) {
+function MovieCard(props:{image:string;title:string;release_date:string;vote_average:string}) {
   return (
     <div className="hover:[&>img]:h-[210px] transition-all">
           <img src={props.image} alt={props.title} className="h-[240px] rounded-lg" />

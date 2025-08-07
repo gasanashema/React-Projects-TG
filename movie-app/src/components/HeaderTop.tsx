@@ -1,4 +1,4 @@
-function Header() {
+function HeaderTop() {
   return (
     <div className="flex justify-between p-5">
         <div className="w-16">
@@ -16,4 +16,4 @@ function Header() {
   )
 }
 
-export default Header
+export default HeaderTop
