@@ -12,7 +12,6 @@ function Form1() {
 
   const handleClick = (value) => {
     if (!isNaN(value) || value === '.') {
-      // Number or decimal
       if (waitingForSecondNum) {
         setDisplay(value === '.' ? '0.' : value)
         setWaitingForSecondNum(false)
