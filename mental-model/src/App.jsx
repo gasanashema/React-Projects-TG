@@ -8,10 +8,7 @@ function App() {
   const [theme,setTheme] = useState(localStorage.getItem('theme'));
 
   useEffect( () => {
-   
-     
       localStorage.setItem('theme',theme);
-   
   }
     ,[theme]
   )
